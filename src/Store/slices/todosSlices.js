@@ -29,11 +29,14 @@ const todosSlice = createSlice({
         },
         navigateList : (state , action) => {
             state.CheckUndone = action.payload === 'all' ?  false :  true
+        },
+        clearDone : (state , action) => {
+            state.list = state.listUndone
         }
     }
 })
 
 
-export const {addTodo , deleteTodo , toggleTodo ,navigateList} = todosSlice.actions;
+export const {addTodo , deleteTodo , toggleTodo ,navigateList , clearDone} = todosSlice.actions;
 
 export default todosSlice.reducer;

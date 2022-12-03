@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector , useDispatch} from 'react-redux';
-import {navigateList} from '../../Store/slices/todosSlices'
+import {navigateList , clearDone} from '../../Store/slices/todosSlices'
 
 export default function Footer() {
 
@@ -9,6 +9,10 @@ export default function Footer() {
     const navigateListHandler = (e) => {
         dispatch(navigateList(e.target.value))
 
+    }
+
+    const clearDoneHandler = (e) => {
+        dispatch(clearDone())
     }
 
     const todosUndone = useSelector(state => state.todos.listUndone)
@@ -23,7 +27,7 @@ export default function Footer() {
                 <button type='button' className={`me-2 border-0 bg-footer ${todosCheck ? '' : 'active'}`} value={'all'} onClick={navigateListHandler} >All</button>
                 <button type='button' className={`border-0 bg-footer ${todosCheck ? 'active' : ''}`} value={'active'} onClick={navigateListHandler}> Active</button>
             </div>
-            <button type="button" className="btn-custom1 m-0 p-0">Clear completed</button>
+            <button type="button" className="btn-custom1 m-0 p-0" onClick={clearDoneHandler}>Clear completed</button>
 
             </div>
         </footer>
