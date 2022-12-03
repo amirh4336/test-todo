@@ -6,13 +6,16 @@ const todosSlice = createSlice({
     initialState : {
         list : [] ,
         todo : {} ,
+        listUndone : []
     },
     reducers : {
         addTodo : (state , action) => {
             state.list.push(action.payload)
+            state.listUndone = state.list.filter(item => item.done !== true)
         },
         deleteTodo : (state , action) => {
             state.list = state.list.filter(item => item.id !== action.payload)
+            state.listUndone = state.list.filter(item => item.done !== true)
         },
         toggleTodo : (state , action) => {
             state.list = state.list.map(item => {
@@ -21,7 +24,7 @@ const todosSlice = createSlice({
                 }
                 return item
             })
-
+            state.listUndone = state.list.filter(item => item.done !== true)
         },
     }
 })

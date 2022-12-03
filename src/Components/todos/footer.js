@@ -1,12 +1,14 @@
 import React from 'react'
-
+import {useSelector} from 'react-redux';
 
 export default function Footer() {
-    
+
+    const todosUndone = useSelector(state => state.todos.listUndone)
+
     return(
         <footer className="bg-footer fixed-bottom p-1">
             <div className="container d-flex justify-content-between align-items-center">
-            <p className="m-0"><span className='fw-bold'>1</span> item left</p>
+            <p className="m-0"><span className='fw-bold'>{`${todosUndone.length}`}</span> item left</p>
             <div className="navigate d-flex">
                 <div className="active me-2" >All</div>
                 <div className="" > Active</div>
