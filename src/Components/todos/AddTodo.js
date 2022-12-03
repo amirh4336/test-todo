@@ -11,7 +11,7 @@ export default function AddTodo() {
                 <form className="form-inline mt-4">
                     <div className="form-group d-flex w-100 ms-auto me-auto ">
                         <input type="text" className="form-control rounded-0" placeholder="title..."/>
-                        <button type="submit" className=" btn-custom rounded-0 border-0">Submit</button>
+                        <button type="submit" className="btn-custom">Submit</button>
                     </div>
                 </form>
             </div>
