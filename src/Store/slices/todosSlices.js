@@ -6,7 +6,8 @@ const todosSlice = createSlice({
     initialState : {
         list : [] ,
         todo : {} ,
-        listUndone : []
+        listUndone : [],
+        CheckUndone : false
     },
     reducers : {
         addTodo : (state , action) => {
@@ -26,10 +27,13 @@ const todosSlice = createSlice({
             })
             state.listUndone = state.list.filter(item => item.done !== true)
         },
+        navigateList : (state , action) => {
+            state.CheckUndone = action.payload === 'all' ?  false :  true
+        }
     }
 })
 
 
-export const {addTodo , deleteTodo , toggleTodo} = todosSlice.actions;
+export const {addTodo , deleteTodo , toggleTodo ,navigateList} = todosSlice.actions;
 
 export default todosSlice.reducer;

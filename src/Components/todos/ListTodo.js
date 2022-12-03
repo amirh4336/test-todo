@@ -5,8 +5,15 @@ import {useSelector} from 'react-redux';
 
 export default function ListTodo() {
 
-    const todos = useSelector(state => state.todos.list)
 
+    const todos = useSelector(state => {
+        if (state.todos.CheckUndone) {
+           return state.todos.listUndone
+        } else {
+           return state.todos.list
+        }
+
+    })
     return(
         <main className="bg-light">
             <div className="todo-item text-muted container fst-italic"><p className='mb-0'>What needs to be done?</p></div>
