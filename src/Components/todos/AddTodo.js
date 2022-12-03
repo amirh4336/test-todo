@@ -36,7 +36,7 @@ export default function AddTodo() {
                         type="text" 
                         className="form-control rounded-0" 
                         placeholder="title..."/>
-                        <button onClick={addTodoHandler} type="button" className="btn-custom">Submit</button>
+                        <button onClick={addTodoHandler} type="button" className="btn-custom px-5">Submit</button>
                     </div>
                 </form>
             </div>
