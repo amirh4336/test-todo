@@ -1,1 +1,17 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.bg-custom {
+    background: #8c7d76 ;
+}
+
+.btn-custom {
+    background: #d9d9d9;
+}
+
+
+
+@media screen and ( min-width: 768px) {
+    .w-lg-75 {
+        width: 50% !important;
+    }
+}
